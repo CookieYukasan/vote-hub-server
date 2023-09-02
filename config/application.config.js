@@ -8,7 +8,7 @@ const defaultConfig = {
     isDev: process.env.NODE_ENV !== 'production',
   },
   mongo: {
-    url: 'mongodb://localhost:27017/vote-hub',
+    url: 'mongodb://localhost:27017/votehub',
     config: {
       useNewUrlParser: true,
       useUnifiedTopology: true,
