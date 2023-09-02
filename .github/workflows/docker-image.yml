@@ -22,6 +22,4 @@ jobs:
     
     - name: Build and Push - Azure Container Registry
       run: |
-        docker build . --file Dockerfile --tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/votehub:latest
-        docker tag ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/votehub:latest ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/votehub:$(date +%s)
-        docker push ${{ secrets.DOCKER_CONTAINER_REGISTRY }}/votehub
+        docker compose up -d --build
