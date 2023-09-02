@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Docker Login 
+      - name: Docker Login
         uses: Azure/docker-login@v1
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
@@ -23,6 +23,6 @@ jobs:
           docker-compose build
           docker-compose push
 
-    - name: Deploy with Docker Compose
-      run: |
-        az webapp config container set --name votehub-server --resource-group GithubActions --multicontainer-config-type compose --multicontainer-config-file docker-compose.yml
+      - name: Deploy with Docker Compose
+        run: |
+          az webapp config container set --name votehub-server --resource-group GithubActions --multicontainer-config-type compose --multicontainer-config-file docker-compose.yml
